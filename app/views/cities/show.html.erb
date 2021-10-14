@@ -1,0 +1,11 @@
+<%= link_to "Cities", cities_path %> <%= link_to "Listings", listings_path %> <%= link_to "Neighborhoods", neighborhoods_path %><br><br>
+<h1><%= @city.name %></h1>
+<h4>Listings</h4>
+<% @city.listings.each do |citylisting| %><br>
+<%= link_to citylisting.title, listing_path(citylisting) %><br><br>
+<%= citylisting.listing_type %><br>
+<%= citylisting.address %><br>
+<%= citylisting.description %><br>
+Average Rating <%= citylisting.average_review_rating %><br>
+$<%= citylisting.price %><br>
+<% end %>
